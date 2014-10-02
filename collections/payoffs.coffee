@@ -1,1 +1,1 @@
-Payoffs = new Meteor.Collection("payoffs")
+this.Payoffs = new Meteor.Collection("payoffs")

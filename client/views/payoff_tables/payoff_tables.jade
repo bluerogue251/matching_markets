@@ -1,33 +1,69 @@
 template(name="payoffTables")
-  table
+  h2 Payoff table
+  table.table
     thead
       tr
-        td
-        td Mango
-        td Peach
-        td Banana
-        td Kiwi
+        th
+        th Mango
+        th Peach
+        th Banana
+        th Kiwi
     tbody
       tr
-        td Blue
-        td= blue.mangoOptions
+        th Blue
+        td= blueMango
+        td= bluePeach
+        td= blueBanana
+        td= blueKiwi
+      tr
+        th Purple
+        td= purpleMango
+        td= purplePeach
+        td= purpleBanana
+        td= purpleKiwi
+      tr
+        th Indigo
+        td= indigoMango
+        td= indigoPeach
+        td= indigoBanana
+        td= indigoKiwi
+      tr
+        th Teal
+        td= tealMango
+        td= tealPeach
+        td= tealBanana
+        td= tealKiwi
+
+  h2 Accepted offers
+  table.table
+    thead
+      tr
+        th
+        th Mango
+        th Peach
+        th Banana
+        th Kiwi
+    tbody
+      tr
+        th Blue
+        td
         td
         td
         td
       tr
-        td Purple
+        th Purple
         td
         td
         td
         td
       tr
-        td Indigo
+        th Indigo
         td
         td
         td
         td
       tr
-        td Teal
+        th Teal
         td
         td
         td
