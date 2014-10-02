@@ -1,0 +1,49 @@
+table experiments
+  id
+  started_at
+  ended_at
+
+table rounds
+  id
+  experiment_id
+  practice_round boolean
+  payoff_round   boolean
+  started_at
+  ended_at
+
+table round_players
+  id
+  round_id
+  player_id
+  role_id
+
+table players
+  amazon_turk_id
+
+table roles
+  id
+  name string
+  type string
+
+  values:
+    Blue   Color
+    Purple Color
+    Indigo Color
+    Teal   Color
+    Mango  Fruit
+    Peach  Fruit
+    Banana Fruit
+    Kiwi   Fruit
+
+table actual_offers
+  offering_round_player_id
+  receiving_round_player_id
+  offerer_payoff   numeric
+  receiever_payoff numeric
+  offered_at  datetime
+  accepted_at datetime
+  rejected_at datetime
+  replaced_at datetime
+
+table possible_offers
+

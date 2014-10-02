@@ -1,0 +1,31 @@
+In different rounds, when a player gives up 1 point, the other player will receive either 1, .8, .5, .2, or 0 points, or transfers will not be allowed at all.
+
+When transfers are not allowed, I still have the four starting options to choose from, right?
+  Correct.
+
+It's possible to not choose any of the four options, right? So that you be left without having paired up with anyone?
+  Correct.
+
+If the transfer rate for each round is totally random, then it should be possible in principle for all thirteen rounds to have, say a transfer rate of .2. Although not likely in practice.
+  No, the order is random, however each one needs to be covered at some point.
+
+Where do the starting values in the payoff table come from?
+  She will email them to me.
+
+If I've made an offer, and it is already accepted, can I make another offer to someone else or am I stuck until one of us gets proposed an offer by someone else?
+  All offers are temporary until the round ends. An accepted offer does not prevent continuation of play by any player.
+
+You say in the video, the payoff table has the amount you'll receive if you do not make any transfers. Each player's payoff table has four possible values. Do they get all four, or do they only get the one that they've actually made a transfer on?
+  No, only when they've made the actual transfer.
+
+There is no way to cooperate over multiple rounds, right?  Because the role switches each round. One round you might be banana, the next round you might be Teal.
+  Correct.
+
+Once you accept an offer, can you change your mind and later reject it? Or is the only way to do that by accepting someone elses offer?
+  No. Only way is by accepting someone else's offer
+
+Why does nothing show up on the screen after you've made an offer.  Like why is there no text saying "pending offer to blue (8,2)" and with a link to cancel it?
+  We should show the text, but no option to cancel
+
+Is an expiration of the 20 second time limit on an offer considered to be a rejection, or is it recorded differently?
+  Recorded differently
