@@ -23,3 +23,9 @@ displayPayoff = (color, fruit) ->
   payoff = Payoffs.findOne(color: color, fruit: fruit)
   payoff.colorReceives + ', ' + payoff.fruitReceives
 
+
+Template.payoffTables.events
+  'click th': (e) ->
+    value = $(e.target).text()
+    alert value
+
