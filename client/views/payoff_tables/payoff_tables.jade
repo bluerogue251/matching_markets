@@ -73,20 +73,28 @@ template(name="payoffTables")
             td
             td
 
-  div.row
-    h3 Blue to Mango
-    table
-      thead
-        tr
-          th You pay
-          th Your total payoff
-          th Mango's total payoff
-          th Mango pays to you
-          th
-      tbody
-        tr
-          td
-          td
-          td
-          td
-          td
+  each colorToFruitTransfers
+    div.modal.fade(id = cssId)
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button" data-dismiss="modal")
+              span(aria-hidden="true") x
+            h4.modal-title Select an offer
+          .modal-body
+            table.table.table-bordered
+              thead
+                tr
+                  th= youPayTo
+                  th Your total payoff
+                  th= theirPayoffTitle
+                  th= theyPayToYouTitle
+                  th
+              tbody
+                each data
+                  tr
+                    td= youPay
+                    td= yourTotalPayoff
+                    td= theirTotalPayoff
+                    td= theyPay
+                    td
