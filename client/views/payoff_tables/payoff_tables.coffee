@@ -1,26 +1,17 @@
 Template.payoffTables.helpers
-  blueMango: ->  displayPayoffs("Blue", "Mango")
-  bluePeach: ->  displayPayoffs("Blue", "Peach")
-  blueBanana: -> displayPayoffs("Blue", "Banana")
-  blueKiwi: ->   displayPayoffs("Blue", "Kiwi")
+  fruits: -> fruits
+  colors: -> colors
+  pageHeader: -> "You are player #{currentRole}. This is round #{roundNumber}. The transfer rate is 1 to #{transferRate}."
 
-  purpleMango: ->  displayPayoffs("Purple", "Mango")
-  purplePeach: ->  displayPayoffs("Purple", "Peach")
-  purpleBanana: -> displayPayoffs("Purple", "Banana")
-  purpleKiwi: ->   displayPayoffs("Purple", "Kiwi")
-
-  indigoMango: ->  displayPayoffs("Indigo", "Mango")
-  indigoPeach: ->  displayPayoffs("Indigo", "Peach")
-  indigoBanana: -> displayPayoffs("Indigo", "Banana")
-  indigoKiwi: ->   displayPayoffs("Indigo", "Kiwi")
-
-  tealMango: ->  displayPayoffs("Teal", "Mango")
-  tealPeach: ->  displayPayoffs("Teal", "Peach")
-  tealBanana: -> displayPayoffs("Teal", "Banana")
-  tealKiwi: ->   displayPayoffs("Teal", "Kiwi")
+  payoffs: ->
+    colors.map (color) ->
+      {
+        colorName: color,
+        data: otherRoles(color).map (otherRole) -> displayPayoffs(color, otherRole)
+      }
 
   possibleTransfers: ->
-    otherRoles().map (otherRole) ->
+    otherRoles(currentRole).map (otherRole) ->
       {
         cssId: "Transfer-to-#{otherRole}",
         youPayTo: "You pay to #{otherRole}",
@@ -31,12 +22,14 @@ Template.payoffTables.helpers
       }
 
 currentRole = "Kiwi"
+roundNumber = 3
+transferRate = 0.5
 
 colors = ["Blue", "Purple", "Indigo", "Teal"]
 fruits = ["Mango", "Peach", "Banana", "Kiwi"]
 
-otherRoles = ->
-  if currentRole in colors
+otherRoles = (role) ->
+  if role in colors
     fruits
   else
     colors
@@ -44,7 +37,6 @@ otherRoles = ->
 possibleTransferData = (color, fruit) ->
   fruit_receives = payoffAmount(color, fruit)
   color_receives = payoffAmount(fruit, color)
-  transferRate = 0.5
   array = []
   [color_receives..1].map (num) ->
     array.push({youPay: num, yourTotalPayoff: color_receives - num, theirTotalPayoff: fruit_receives + (num * transferRate) })
