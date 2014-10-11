@@ -3,7 +3,7 @@ template(name="payoffTables")
   div.row
     div.col-md-6
       h2 Payoff table
-      table.table.table-bordered
+      table#payoff-table.table.table-bordered
         thead
           tr
             td
@@ -73,7 +73,7 @@ template(name="payoffTables")
             td
             td
 
-  each colorToFruitTransfers
+  each possibleTransfers
     div.modal.fade(id = cssId)
       .modal-dialog
         .modal-content
