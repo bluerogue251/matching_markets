@@ -8,3 +8,8 @@ Meteor.methods
     })
     Offers.insert(offer)
 
+  acceptOffer: (offerId) ->
+    Offers.update(offerId, {$set: { acceptedAt: new Date().getTime() }})
+
+  rejectOffer: (offerId) ->
+    Offers.update(offerId, {$set: { rejectedAt: new Date().getTime() }})

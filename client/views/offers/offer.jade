@@ -1,2 +1,7 @@
 template(name="offer")
-  p.bg-info.offer= textDescription
+  p.bg-info.offer.row-fluid
+    span= textDescription
+    .pull-right
+      button.reject.btn.btn-danger Reject
+      button.accept.btn.btn-primary Accept
+
