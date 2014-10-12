@@ -9,4 +9,7 @@ insecure
 coffeescript
 mquandalle:jade
 iron:router
-mizzao:turkserver
+mizzao:bootstrap-3
+accounts-password
+mrt:accounts-ui-bootstrap-dropdown
+

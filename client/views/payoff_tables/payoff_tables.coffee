@@ -14,6 +14,7 @@ Template.payoffTables.helpers
     otherRoles(currentRole).map (otherRole) ->
       {
         cssId: "Transfer-to-#{otherRole}",
+        otherRole: otherRole,
         youPayTo: "You pay to #{otherRole}",
         theyPayToYouTitle: "#{otherRole} pays to you",
         theirPayoffTitle: "#{otherRole}'s total payoff",
@@ -58,4 +59,24 @@ Template.payoffTables.events
   'click #payoff-table th': (e) ->
     clickedOnUser = $(e.target).text()
     $("#Transfer-to-#{clickedOnUser}").modal()
+
+  'click button.choose': (e) ->
+    otherRole = $(e.target).closest(".modal").data("other-role")
+    td = $(e.target).closest("tr")
+    youPay          = parseInt(td.find(".you-pay").text())
+    theyPay         = parseInt(td.find(".they-pay").text())
+    fromTotalPayoff = parseInt(td.find(".your-total-payoff").text())
+    toTotalPayoff   = parseInt(td.find(".their-total-payoff").text())
+    offer = {
+      from: currentRole,
+      to: otherRole,
+      fromPays: youPay,
+      toPays: theyPay,
+      fromTotalPayoff: fromTotalPayoff,
+      toTotalPayoff: toTotalPayoff
+    }
+    if confirm "Make offer?"
+      Meteor.call 'makeOffer', offer, (error, id) ->
+        alert error.reason if error
+      $('.modal').modal("hide")
 

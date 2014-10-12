@@ -34,7 +34,7 @@ template(name="payoffTables")
               td
 
   each possibleTransfers
-    div.modal.fade(id = cssId)
+    div.modal.fade(id = cssId data-other-role = otherRole)
       .modal-dialog
         .modal-content
           .modal-header
@@ -53,8 +53,11 @@ template(name="payoffTables")
               tbody
                 each data
                   tr
-                    td= youPay
-                    td= yourTotalPayoff
-                    td= theirTotalPayoff
-                    td= theyPay
+                    td.you-pay= youPay
+                    td.your-total-payoff= yourTotalPayoff
+                    td.their-total-payoff= theirTotalPayoff
+                    td.they-pay= theyPay
                     td
+                      button.choose.bg-primary select
+
+  +offers

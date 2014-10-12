@@ -5,3 +5,7 @@ h1 {
 th {
   font-size: 1.2em;
 }
+
+#offers div.offer {
+  margin-bottom: 10px;
+}
