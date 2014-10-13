@@ -16,22 +16,7 @@ template(name="payoffTables")
               each data
                 td= this
 
-    div.col-md-6
-      h2 Accepted offers
-      table.table.table-bordered
-        thead
-          tr
-            td
-            each fruits
-              th= this
-        tbody
-          each colors
-            tr
-              th= this
-              td
-              td
-              td
-              td
+    +acceptedOffersTable
 
   each possibleTransfers
     div.modal.fade(id = cssId data-other-role = otherRole)

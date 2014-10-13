@@ -1,0 +1,15 @@
+template(name="acceptedOffersTable")
+  div.col-md-6
+    h2 Accepted offers
+    table.table.table-bordered
+      thead
+        tr
+          td
+          each fruits
+            th= this
+      tbody
+        each acceptedOffers
+          tr
+            th= colorName
+            each data
+              td= this

@@ -1,5 +1,8 @@
 template(name="offers")
   #offers
     h3 Proposed offers
-      each offers
-        +offer
+    .row-fluid
+      table.table.table-bordered
+        tbody
+          each offers
+            +offer

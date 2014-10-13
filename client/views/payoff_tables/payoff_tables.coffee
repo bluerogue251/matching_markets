@@ -7,7 +7,7 @@ Template.payoffTables.helpers
     colors.map (color) ->
       {
         colorName: color,
-        data: otherRoles(color).map (otherRole) -> displayPayoffs(color, otherRole)
+        data: fruits.map (fruit) -> displayPayoffs(color, fruit)
       }
 
   possibleTransfers: ->
@@ -25,9 +25,6 @@ Template.payoffTables.helpers
 currentRole = "Kiwi"
 roundNumber = 3
 transferRate = 0.5
-
-colors = ["Blue", "Purple", "Indigo", "Teal"]
-fruits = ["Mango", "Peach", "Banana", "Kiwi"]
 
 otherRoles = (role) ->
   if role in colors
